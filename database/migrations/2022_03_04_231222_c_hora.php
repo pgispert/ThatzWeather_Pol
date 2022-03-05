@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Clima extends Migration
+class CHora extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class Clima extends Migration
      */
     public function up()
     {
-        /*Schema::create('ciudad', function(Blueprint $table) {
+        Schema::create('cHora', function(Blueprint $table) {
             $table->bigIncrements('id');
-            $table->number('cp');
-            $table->string('nCiudad');
+            $table->date('dia');
+            $table->dateTime('hora');
+            $table->smallInteger('temperatura');
             $table->string('clima');
-        });*/
+            $table->bigInteger('id_Ciudad');
+        });
     }
 
     /**
@@ -28,6 +30,6 @@ class Clima extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cHora');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CDia extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::create('cDia', function(Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->date('dia');
+            $table->smallInteger('temperatura');
+            $table->string('clima');
+            $table->bigInteger('id_Ciudad');
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        
+        Schema::dropIfExists('cDia');
     }
-};
+}

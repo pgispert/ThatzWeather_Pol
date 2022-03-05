@@ -12,7 +12,7 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="vh-100 w-100" style="background-image: url('./img/fondo.png')">
         <div>
         </div>
     </body>
