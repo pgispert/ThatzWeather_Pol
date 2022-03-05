@@ -14,18 +14,14 @@
         
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <style>
-            #textoBuscador::placeholder {
-                color: #FFF;
-            }
-        </style>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     </head>
-    <body class="vh-100 w-100 pt-3" style="background-image: url('./img/fondo.png')">
-        <div class="text-center mt-5 ">
-            <img src="./img/logo.png" class="img-fluid mx-auto" alt="ThatzWeather" />
+    <body class="vh-100 w-100 pt-3" style="background-image: url('./img/fondo.png'); background-repeat: no-repeat;  background-attachment: fixed;">
+        <div class="text-center my-5">
+            <img src="./img/logo.png" class="img-fluid m-auto" alt="ThatzWeather" />
         </div>
-        <div class="container d-flex justify-content-center align-items-center h-50">
-            <x-resultado />
+        <div class="contenedor">
+            <x-resultado :datosActuales="$datosActuales" :datosFuturos="$datosFuturos" :ciudades="$ciudades" />
         </div>
     </body>
 </html>

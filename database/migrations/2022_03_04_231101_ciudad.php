@@ -15,7 +15,7 @@ class Ciudad extends Migration
     {
         Schema::create('ciudad', function(Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('cp')->unique();
+            $table->string('cp')->unique();
             $table->string('nCiudad');
             $table->date('dia');
             $table->string('temperatura');

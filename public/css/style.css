@@ -1,0 +1,123 @@
+#textoBuscador::placeholder {
+    color: #FFF;
+}
+
+.resultado { 
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="search"] {
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
+.infoDias {
+    padding-bottom: 15px;
+}
+
+.infoTemp {
+    margin-left: 30px;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.infoTemp>p {
+    margin-bottom: 2rem;
+}
+
+.datos>p {
+    margin-bottom: 0.25rem !important;
+}
+
+.imagen {
+    max-width: 75px;
+    width: 100%;
+}
+
+.hora, .dia {
+    width: 75px;
+}
+
+.dias {
+    margin-right: 15px;
+}
+
+.contenedor {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.separacion {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+}
+
+.informacion {
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media only screen and (max-width: 750px) {
+    .resultado {
+        flex-direction: column;
+    }
+
+    .infoTemp {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .conjunto {
+        flex-direction: column;
+    }
+
+    .linea {
+        display: none;
+    }
+
+    .horas {
+        margin: 10px;
+    }
+
+    .hora {
+        width: 60px;
+    }
+
+    .dias {
+        margin: auto;
+    }
+
+    .dia {
+        width: 55px;
+    }
+
+    .dia>img {
+        width: 100%;
+    }
+
+    .input-group {
+        flex-direction: column-reverse;
+    }
+
+    .separacion {
+        margin-right: 0.5rem !important;
+        margin-left: 0.5rem !important;
+    }
+
+    .informacion {
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
