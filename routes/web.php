@@ -33,4 +33,8 @@ Route::post('/guardar',[CiudadController::class,'guardar']);
 
 Auth::routes();
 
+Route::get('/clima', function() {
+    return view('clima');
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

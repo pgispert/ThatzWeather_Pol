@@ -14,4 +14,6 @@ class Ciudad extends Model
     * @var string
     */
     protected $table = 'ciudad';
+
+    protected $primaryKey = 'cp';
 }

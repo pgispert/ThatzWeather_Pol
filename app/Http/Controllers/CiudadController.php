@@ -11,7 +11,6 @@ class CiudadController extends Controller
 {
     function guardar(Request $request) {
 
-        $ciudad = new Ciudad;
         $cp = $request->input("cp");
         $key = '602d49ea7d1adb1c62c473d9e031bb95';
 
@@ -22,14 +21,25 @@ class CiudadController extends Controller
 
         $weather = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$lat}&lon={$lon}&exclude=minutely&lang=es&appid={$key}&units=metric");
         $weatherJSON = $weather->json();
+        
+        $ciudad = Ciudad::where('cp', $cp)->first();
 
-        $ciudad->cp = $cp;
-        $ciudad->nCiudad = $responseJSON["name"];
-        $ciudad->dia = Carbon::now();
-        $ciudad->temperatura = $weatherJSON["current"]["temp"];
-        $ciudad->clima = $weatherJSON["current"]["weather"][0]["description"];
-        $ciudad->save();
+        if(is_null($ciudad)) {
+            $ciudad = new Ciudad;
+            $ciudad->cp = $cp;
+            $ciudad->nCiudad = $responseJSON["name"];
+            $ciudad->dia = Carbon::now();
+            $ciudad->temperatura = $weatherJSON["current"]["temp"];
+            $ciudad->clima = $weatherJSON["current"]["weather"][0]["description"];
+            $ciudad->save();
+        } else {
+            $ciudad->nCiudad = $responseJSON["name"];
+            $ciudad->dia = Carbon::now();
+            $ciudad->temperatura = $weatherJSON["current"]["temp"];
+            $ciudad->clima = $weatherJSON["current"]["weather"][0]["description"];
+            $ciudad->update();
+        }
 
-        return view('home');
+        return redirect('clima');
     }
 }

@@ -25,7 +25,7 @@
             <img src="./img/logo.png" class="img-fluid mx-auto" alt="ThatzWeather" />
         </div>
         <div class="container d-flex justify-content-center align-items-center h-50">
-            <x-buscador />
+            <x-resultado />
         </div>
     </body>
 </html>
