@@ -15,13 +15,12 @@ class Ciudad extends Migration
     {
         Schema::create('ciudad', function(Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('cp');
+            $table->bigInteger('cp')->unique();
             $table->string('nCiudad');
             $table->date('dia');
-            $table->smallInteger('temperatura');
+            $table->string('temperatura');
             $table->string('clima');
-            $table->bigInteger('id_cHora');
-            $table->bigInteger('id_cDia');
+            $table->timestamps();
         });
     }
 
